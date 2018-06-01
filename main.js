@@ -146,3 +146,9 @@ answer1.addEventListener("click", function(){ pickedAnswer=answer1.innerHTML;che
 answer2.addEventListener("click", function(){ pickedAnswer=answer2.innerHTML;checkAnswer(pickedAnswer);})
 answer3.addEventListener("click", function(){ pickedAnswer=answer3.innerHTML;checkAnswer(pickedAnswer);})
 console.log(answer1.innerHTML);
+
+let q1= document.getElementById("0");
+let q2= document.getElementById("1");
+
+q1.addEventListener("click", function(){replaceAnswers(0);replaceQuestion(0) })
+q2.addEventListener("click", function(){ replaceAnswers(1);replaceQuestion(1) })
