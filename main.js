@@ -68,7 +68,7 @@ updateDataList()
 
 var links = function () {
   for (var i = 0; i < QuestionList.length; i++) {
-    var question.Card = document.getElementById(i);
+    var questionCard = document.getElementById(i);
     questionCard.replaceChild(QuestionList[i],);
     console.log(test)
   }
@@ -86,22 +86,25 @@ askTheQuestion.innerHTML=""
 let getTheQuestion=document.createTextNode(question)
 askTheQuestion.innerHTML=question
 }
-let answerArray = [QuestionList[0].trueanswer, QuestionList[0].falseAnswer1, QuestionList[0].falseAnswer2]
-//question.string
-//console.log(answerArray);
+
+let replaceAnswers=function(i){
+  let answerArray = [QuestionList[i].trueanswer, QuestionList[i].falseAnswer1, QuestionList[i].falseAnswer2]
+  correctAnswer= QuestionList[i].trueanswer
 let whatIsAnswer1= document.getElementById("possibleAnswers")
 whatIsAnswer1.innerHTML=""
-//let newListItem = document.createElement("li");
-
+let j=0
 
 answerArray.forEach(function (item) {
 
     let newListItem = document.createElement("li");
     let newContent = document.createTextNode([item]);
     newListItem.appendChild(newContent);
+    newListItem.id = "a"+j
+    j++
     console.log(newListItem)
     whatIsAnswer1.appendChild(newListItem)
 
   })
-
+}
 replaceQuestion(0)
+replaceAnswers(0)
