@@ -25,9 +25,9 @@ divq.falseAnswer1="makes my lunch"
 divq.falseAnswer2="Runs the world"
 
 
-console.log(h1q)
+//console.log(h1q)
 
-console.log(questionTemplate.children)
+//console.log(questionTemplate.children)
 
 
 //LIST OPBOUWEN
@@ -47,7 +47,9 @@ var updateDataList = function (){
   for (i=0;i<QuestionList.length;i++) {
 
   var newCardItem = document.createElement("li");
+  newCardItem.id = i;
   var newCardTitle = document.createTextNode(QuestionList[i].question);
+
 
   newCardItem.appendChild(newCardTitle);
   listElement.appendChild(newCardItem);
