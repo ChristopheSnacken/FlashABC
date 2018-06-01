@@ -25,7 +25,11 @@ divq.falseAnswer1="makes my lunch"
 divq.falseAnswer2="Runs the world"
 
 
+
 //console.log(h1q)
+
+//console.log(h1q)
+
 
 //console.log(questionTemplate.children)
 
@@ -70,10 +74,10 @@ askTheQuestion.innerHTML=""
 let getTheQuestion=document.createTextNode(question)
 askTheQuestion.innerHTML=question
 
-let answer1 = QuestionList[0].trueanswer
+let answerArray = [QuestionList[0].trueanswer, QuestionList[0].falseAnswer1, QuestionList[0].falseAnswer2]
 //question.string
-console.log(answer1);
+console.log(answerArray);
 let whatIsAnswer1= document.getElementById("possibleAnswers")
 whatIsAnswer1.innerHTML=""
-let getAnswer1=document.createTextNode(answer1)
-whatIsAnswer1.innerHTML=answer1
+let getAnswer1=document.createTextNode(answerArray)
+whatIsAnswer1.innerHTML=answerArray
