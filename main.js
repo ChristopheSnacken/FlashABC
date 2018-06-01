@@ -44,13 +44,14 @@ console.log(QuestionList)
 //Push to array QuestionList
 var listElement = document.getElementById('listQuestions');
 
+var newCardItem
 
 var updateDataList = function (){
   listElement.innerHTML =''
 
   for (i=0;i<QuestionList.length;i++) {
 
-  var newCardItem = document.createElement("li");
+  newCardItem = document.createElement("li");
   newCardItem.id = i;
   var newCardTitle = document.createTextNode(QuestionList[i].question);
 
@@ -64,6 +65,13 @@ var updateDataList = function (){
 QuestionList.push(h1q, divq)
 updateDataList()
 
+var links = function () {
+  for (var j = 0; j < QuestionList.length; j++) {
+    var question.Card = document.getElementById(j);
+    questionCard.replaceChild(QuestionList[j],);
+    console.log(test)
+  }
+}
 
 //console.log(QuestionList[0].question)
 let question = QuestionList[0].question
