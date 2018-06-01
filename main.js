@@ -44,16 +44,18 @@ console.log(QuestionList)
 //Push to array QuestionList
 var listElement = document.getElementById('listQuestions');
 
-var newCardItem
-
 var updateDataList = function (){
   listElement.innerHTML =''
 
-  for (i=0;i<QuestionList.length;i++) {
-
-  newCardItem = document.createElement("li");
+  for (let i=0;i<QuestionList.length;i++) {
+    const item = QuestionList[i];
+  const newCardItem = document.createElement("li");
   newCardItem.id = i;
-  var newCardTitle = document.createTextNode(QuestionList[i].question);
+  newCardItem.addEventListener("click", function() {
+
+  });
+  var newCardTitle = document.createTextNode(item.question);
+
 
 
   newCardItem.appendChild(newCardTitle);
@@ -152,3 +154,7 @@ let q2= document.getElementById("1");
 
 q1.addEventListener("click", function(){replaceAnswers(0);replaceQuestion(0) })
 q2.addEventListener("click", function(){ replaceAnswers(1);replaceQuestion(1) })
+
+
+//let q= document.getElementById("i");
+//q.addEventListener("click", function(){replaceAnswers(i);replaceQuestion(i) })
