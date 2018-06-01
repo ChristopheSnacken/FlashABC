@@ -1,3 +1,4 @@
+const QuestionList = []
 const questionTemplate ={
   question: "What is your question",
   trueanswer: "this is your answer",
