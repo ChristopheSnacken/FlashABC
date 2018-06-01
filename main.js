@@ -94,6 +94,27 @@ let whatIsAnswer1= document.getElementById("possibleAnswers")
 whatIsAnswer1.innerHTML=""
 let j=0
 
+function shuffle(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
+
+answerArrey =shuffle(answerArray)
+
 answerArray.forEach(function (item) {
 
     let newListItem = document.createElement("li");
