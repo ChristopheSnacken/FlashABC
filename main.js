@@ -31,8 +31,8 @@ console.log(questionTemplate.children)
 
 
 //LIST OPBOUWEN
-QuestionList[0] = h1q.question
-QuestionList[1] = divq.question
+//QuestionList[0] = h1q.question
+//QuestionList[1] = divq.question
 
 //QuestionList.push(h1q.question, divq.question)
 console.log(QuestionList)
@@ -47,7 +47,7 @@ var updateDataList = function (){
   for (i=0;i<QuestionList.length;i++) {
 
   var newCardItem = document.createElement("li");
-  var newCardTitle = document.createTextNode(QuestionList[i]);
+  var newCardTitle = document.createTextNode(QuestionList[i].question);
 
   newCardItem.appendChild(newCardTitle);
   listElement.appendChild(newCardItem);
@@ -55,16 +55,23 @@ var updateDataList = function (){
 
   }
 }
-
-
+QuestionList.push(h1q, divq)
 updateDataList()
 
 
-console.log(QuestionList[0].question)
-let question =QuestionList[0].question
-question.string
+//console.log(QuestionList[0].question)
+let question = QuestionList[0].question
+//question.string
 console.log(question);
-let askTheQuestion= document.getElementsByClassName("Question")
-askTheQuestion[0].innerHTML=""
-let getTheQuestion=document.createTextNode(QuestionList[0].question)
-askTheQuestion[0].innerHTML=question
+let askTheQuestion= document.getElementById("Question")
+askTheQuestion.innerHTML=""
+let getTheQuestion=document.createTextNode(question)
+askTheQuestion.innerHTML=question
+
+let answer1 = QuestionList[0].trueanswer
+//question.string
+console.log(answer1);
+let whatIsAnswer1= document.getElementById("possibleAnswers")
+whatIsAnswer1.innerHTML=""
+let getAnswer1=document.createTextNode(answer1)
+whatIsAnswer1.innerHTML=answer1
