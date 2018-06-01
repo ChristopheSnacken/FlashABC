@@ -1,10 +1,14 @@
 let QuestionList = []
+
+
 const questionTemplate ={
   question: "What is your question",
   trueanswer: "this is your answer",
   falseAnswer1: "don't pick me",
   falseAnswer2: "don't pick me either"
 }
+
+
 
 const h1q = Object.create(questionTemplate)
 
@@ -27,21 +31,23 @@ console.log(questionTemplate.children)
 
 
 //LIST OPBOUWEN
-QuestionList.push(h1q, divq)
+QuestionList[0] = h1q.question
+QuestionList[1] = divq.question
+
+//QuestionList.push(h1q.question, divq.question)
 console.log(QuestionList)
 
 //Push to array QuestionList
-var listElement = document.getElementsByClassName('QuestionList');
+var listElement = document.getElementById('listQuestions');
 
-var updateData = function (){
-  listElement[0].innerHTML =''
+
+var updateDataList = function (){
+  listElement.innerHTML =''
 
   for (i=0;i<QuestionList.length;i++) {
 
   var newCardItem = document.createElement("li");
-  var newCardTitle = document.createTextNode(QuestionList[i].question);
-  console.log(QuestionList[i].question)
-
+  var newCardTitle = document.createTextNode(QuestionList[i]);
 
   newCardItem.appendChild(newCardTitle);
   listElement.appendChild(newCardItem);
@@ -49,3 +55,6 @@ var updateData = function (){
 
   }
 }
+
+
+updateDataList()
