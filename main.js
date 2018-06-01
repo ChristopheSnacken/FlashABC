@@ -108,3 +108,20 @@ answerArray.forEach(function (item) {
 }
 replaceQuestion(0)
 replaceAnswers(0)
+let checkAnswer=function(checkingAnswer){
+  if (correctAnswer==checkingAnswer){
+    window.alert("correct");
+    return true
+  }else{
+    window.alert("incorrect");
+    return false
+  }
+}
+let answer1= document.getElementById("a0");
+let answer2= document.getElementById("a1");
+let answer3= document.getElementById("a2");
+let pickedAnswer
+answer1.addEventListener("click", function(){ pickedAnswer=answer1.innerHTML;checkAnswer(pickedAnswer);})
+answer2.addEventListener("click", function(){ pickedAnswer=answer2.innerHTML;checkAnswer(pickedAnswer);})
+answer3.addEventListener("click", function(){ pickedAnswer=answer3.innerHTML;checkAnswer(pickedAnswer);})
+console.log(answer1.innerHTML);
