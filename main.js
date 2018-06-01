@@ -49,3 +49,12 @@ var updateData = function (){
 
   }
 }
+
+console.log(QuestionList[0].question)
+let question =QuestionList[0].question
+question.string
+console.log(question);
+let askTheQuestion= document.getElementsByClassName("Question")
+askTheQuestion[0].innerHTML=""
+let getTheQuestion=document.createTextNode(QuestionList[0].question)
+askTheQuestion[0].innerHTML=question
