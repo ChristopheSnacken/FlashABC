@@ -65,27 +65,43 @@ var updateDataList = function (){
 QuestionList.push(h1q, divq)
 updateDataList()
 
+
 var links = function () {
-  for (var j = 0; j < QuestionList.length; j++) {
-    var question.Card = document.getElementById(j);
-    questionCard.replaceChild(QuestionList[j],);
+  for (var i = 0; i < QuestionList.length; i++) {
+    var question.Card = document.getElementById(i);
+    questionCard.replaceChild(QuestionList[i],);
     console.log(test)
   }
 }
 
+
+let replaceQuestion=function(i){
+
 //console.log(QuestionList[0].question)
-let question = QuestionList[0].question
+let question = QuestionList[i].question
 //question.string
 console.log(question);
 let askTheQuestion= document.getElementById("Question")
 askTheQuestion.innerHTML=""
 let getTheQuestion=document.createTextNode(question)
 askTheQuestion.innerHTML=question
-
+}
 let answerArray = [QuestionList[0].trueanswer, QuestionList[0].falseAnswer1, QuestionList[0].falseAnswer2]
 //question.string
-console.log(answerArray);
+//console.log(answerArray);
 let whatIsAnswer1= document.getElementById("possibleAnswers")
 whatIsAnswer1.innerHTML=""
-let getAnswer1=document.createTextNode(answerArray)
-whatIsAnswer1.innerHTML=answerArray
+//let newListItem = document.createElement("li");
+
+
+answerArray.forEach(function (item) {
+
+    let newListItem = document.createElement("li");
+    let newContent = document.createTextNode([item]);
+    newListItem.appendChild(newContent);
+    console.log(newListItem)
+    whatIsAnswer1.appendChild(newListItem)
+
+  })
+
+replaceQuestion(0)
